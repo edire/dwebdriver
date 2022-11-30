@@ -1,17 +1,17 @@
-# my_webdrivers
+# Description
 
-A Python library for custom formatted Selenium driver handling.
+A Python library by Dire Analytics for custom Selenium driver handling.
 
 ## Installation
 
-pip install git+https://github.com/edire/my_webdrivers.git
+pip install git+https://github.com/edire/dwebdriver.git
 
 ## Usage
 
 ```python
-import my_webdrivers
+import dwebdriver
 
-driver = my_webdrivers.ChromeDriver()
+driver = dwebdriver.ChromeDriver()
 ```
 
 ## Contributing
