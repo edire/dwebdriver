@@ -13,7 +13,7 @@ chromedriver_autoinstaller.install()
 
 class ChromeDriver(Chrome):
     def __init__(self
-                 , download_directory = os.path.join(os.getenv('USERPROFILE'), 'Downloads')
+                 , download_directory = os.getcwd()
                  , headless=True
                  ):
         self.directory = download_directory

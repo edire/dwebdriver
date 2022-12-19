@@ -21,3 +21,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 MIT License
+
+## Updates
+
+12/19/2022 - Updated download directory to current working directory for cross platform functionality.
