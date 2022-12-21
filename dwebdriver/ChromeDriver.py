@@ -15,6 +15,7 @@ class ChromeDriver(Chrome):
     def __init__(self
                  , download_directory = os.getcwd()
                  , headless=True
+                 , no_sandbox=False
                  ):
         self.directory = download_directory
         self.chrome_options = ChromeOptions()
@@ -22,8 +23,11 @@ class ChromeDriver(Chrome):
         self.chrome_options.add_argument('--start-maximized')
         self.chrome_options.add_argument("--log-level=3")
         self.chrome_options.add_argument('--disable-gpu')
+        self.chrome_options.add_argument('--disable-extensions')
         if headless==True:
             self.chrome_options.add_argument('--headless')
+        if no_sandbox==True:
+            self.chrome_options.add_argument('--no-sandbox')
         super().__init__(options=self.chrome_options)
 
     def driver_command(self, xpath, command, command_value=None):
