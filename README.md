@@ -25,4 +25,5 @@ MIT License
 ## Updates
 
 12/19/2022 - Updated download directory to current working directory for cross platform functionality.
-12/21/2022 - Added no_sandbox option when starting ChromeDriver
+12/21/2022 - Added no_sandbox option when starting ChromeDriver.
+12/22/2022 - Added window size option to ChromeDriver.

@@ -16,11 +16,15 @@ class ChromeDriver(Chrome):
                  , download_directory = os.getcwd()
                  , headless=True
                  , no_sandbox=False
+                 , window_size=None
                  ):
         self.directory = download_directory
         self.chrome_options = ChromeOptions()
         self.chrome_options.add_experimental_option('prefs', {'download.default_directory': download_directory})
-        self.chrome_options.add_argument('--start-maximized')
+        if window_size==None:
+            self.chrome_options.add_argument('--start-maximized')
+        else:
+            self.chrome_options.add_argument(f'--window-size={window_size}')
         self.chrome_options.add_argument("--log-level=3")
         self.chrome_options.add_argument('--disable-gpu')
         self.chrome_options.add_argument('--disable-extensions')
