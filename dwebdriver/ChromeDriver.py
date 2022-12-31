@@ -16,23 +16,23 @@ class ChromeDriver(Chrome):
                  , download_directory = os.getcwd()
                  , headless=True
                  , no_sandbox=False
-                 , window_size=None
+                 , window_size=None # Docker=1920,1080
                  ):
         self.directory = download_directory
-        self.chrome_options = ChromeOptions()
-        self.chrome_options.add_experimental_option('prefs', {'download.default_directory': download_directory})
+        self.options = ChromeOptions()
+        self.options.add_experimental_option('prefs', {'download.default_directory': download_directory})
         if window_size==None:
-            self.chrome_options.add_argument('--start-maximized')
+            self.options.add_argument('--start-maximized')
         else:
-            self.chrome_options.add_argument(f'--window-size={window_size}')
-        self.chrome_options.add_argument("--log-level=3")
-        self.chrome_options.add_argument('--disable-gpu')
-        self.chrome_options.add_argument('--disable-extensions')
+            self.options.add_argument(f'--window-size={window_size}')
+        self.options.add_argument("--log-level=3")
+        self.options.add_argument('--disable-gpu')
+        self.options.add_argument("--disable-dev-shm-usage")
         if headless==True:
-            self.chrome_options.add_argument('--headless')
+            self.options.add_argument('--headless')
         if no_sandbox==True:
-            self.chrome_options.add_argument('--no-sandbox')
-        super().__init__(options=self.chrome_options)
+            self.options.add_argument('--no-sandbox')
+        super().__init__(options=self.options)
 
     def driver_command(self, xpath, command, command_value=None):
         element = self.find_element_by_xpath(xpath)
