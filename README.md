@@ -24,7 +24,7 @@ MIT License
 
 ## Updates
 
-01/07/2023 - Updated for deprecated find_element Selenium logic.
+01/07/2023 - Updated for deprecated find_element Selenium logic.  Updated to use dataframe copy.
 12/30/2022 - Added dev-shm usage and window size for docker compatibility.
 12/22/2022 - Added window size option to ChromeDriver.
 12/21/2022 - Added no_sandbox option when starting ChromeDriver.

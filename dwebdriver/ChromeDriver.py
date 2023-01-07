@@ -55,6 +55,7 @@ class ChromeDriver(Chrome):
             self.execute_script("arguments[0].scrollIntoView();", element)
 
     def process_df(self, df_orig, odbc_db=None):
+        df = df_orig.copy()
         df.dropna(axis=0, how='all', inplace=True)
         df.replace({nan:None}, inplace=True)
         for i in range(df.shape[0]):
