@@ -35,7 +35,7 @@ class ChromeDriver(Chrome):
         super().__init__(options=self.options)
 
     def driver_command(self, xpath, command, command_value=None):
-        if xpath != None
+        if xpath != None:
             element = self.find_element(by='xpath', value=xpath)
 
         if command == 'click':
