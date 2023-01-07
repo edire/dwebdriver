@@ -56,6 +56,10 @@ class ChromeDriver(Chrome):
         elif command == 'scroll':
             self.execute_script("arguments[0].scrollIntoView();", element)
         elif command == 'switch_frame':
+            try:
+                command_value = int(command_value)
+            except:
+                pass
             self.switch_to.frame(command_value)
 
     def process_df(self, df_orig, odbc_db=None):
