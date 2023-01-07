@@ -35,7 +35,7 @@ class ChromeDriver(Chrome):
         super().__init__(options=self.options)
 
     def driver_command(self, xpath, command, command_value=None):
-        element = self.find_element_by_xpath(xpath)
+        element = self.find_element(by='xpath', value=xpath)
         if command == 'click':
             element.click()
         elif command == 'send_keys':
@@ -54,7 +54,7 @@ class ChromeDriver(Chrome):
         elif command == 'scroll':
             self.execute_script("arguments[0].scrollIntoView();", element)
 
-    def process_df(self, df, odbc_db=None):
+    def process_df(self, df_orig, odbc_db=None):
         df.dropna(axis=0, how='all', inplace=True)
         df.replace({nan:None}, inplace=True)
         for i in range(df.shape[0]):
