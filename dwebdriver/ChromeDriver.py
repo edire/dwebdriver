@@ -38,7 +38,9 @@ class ChromeDriver(Chrome):
         if xpath != None:
             element = self.find_element(by='xpath', value=xpath)
 
-        if command == 'click':
+        if command == 'url':
+            self.get(command_value)
+        elif command == 'click':
             element.click()
         elif command == 'send_keys':
             element.send_keys(command_value)
