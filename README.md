@@ -24,6 +24,7 @@ MIT License
 
 ## Updates
 
+03/17/2023 - Added logic to accept alert.<br>
 02/21/2023 - Added url command in dataframe processing.<br>
 01/19/2023 - Added "switch to parent" logic.<br>
 01/07/2023 - Updated for deprecated find_element Selenium logic.  Updated to use dataframe copy.  Added switch frame logic to dataframe processing.  Fixed switch frame logic to not look for xpath element.  Added missing colon to if statement.<br>

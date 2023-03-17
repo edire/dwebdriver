@@ -17,6 +17,10 @@ class ChromeDriver(Chrome):
                  , headless=True
                  , no_sandbox=False
                  , window_size=None # Docker=1920,1080
+                 , allow_popups=False
+                 , disable_extensions=False
+                 , user_profile=None
+                 , user_dir=fr"C:\Users\{os.getenv('USERNAME')}\AppData\Local\Google\Chrome\User Data"
                  ):
         self.directory = download_directory
         self.options = ChromeOptions()
@@ -32,6 +36,13 @@ class ChromeDriver(Chrome):
             self.options.add_argument('--headless')
         if no_sandbox==True:
             self.options.add_argument('--no-sandbox')
+        if allow_popups == True:
+            self.options.add_argument("--disable-popup-blocking")
+        if disable_extensions == True:
+            self.options.add_argument("--disable-extensions")
+        if user_profile != None:
+            self.options.add_argument(f"--user-data-dir={user_dir}")
+            self.options.add_argument(f"--profile-directory={user_profile}")
         super().__init__(options=self.options)
 
     def driver_command(self, xpath, command, command_value=None):
@@ -66,6 +77,8 @@ class ChromeDriver(Chrome):
                 except:
                     pass
                 self.switch_to.frame(command_value)
+        elif command == 'accept':
+            self.switch_to.alert.accept()
 
     def process_df(self, df_orig, odbc_db=None):
         df = df_orig.copy()
