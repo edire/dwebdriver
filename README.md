@@ -24,6 +24,7 @@ MIT License
 
 ## Updates
 
+03/19/2023 - Added scroll margin logic.<br>
 03/17/2023 - Added logic to accept alert.<br>
 02/21/2023 - Added url command in dataframe processing.<br>
 01/19/2023 - Added "switch to parent" logic.<br>

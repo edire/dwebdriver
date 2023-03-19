@@ -68,6 +68,8 @@ class ChromeDriver(Chrome):
             action.double_click(element).perform()
         elif command == 'scroll':
             self.execute_script("arguments[0].scrollIntoView();", element)
+        elif command == 'scroll_margin':
+            self.execute_script(f"arguments[0].style.marginTop = '-{command_value}px'", element)
         elif command == 'switch_frame':
             if command_value == 'parent':
                 self.switch_to.default_content()
