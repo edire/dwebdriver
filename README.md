@@ -24,6 +24,7 @@ MIT License
 
 ## Updates
 
+03/24/2023 - Added drop down field selection.<br>
 03/19/2023 - Added scroll margin logic.<br>
 03/17/2023 - Added logic to accept alert.<br>
 02/21/2023 - Added url command in dataframe processing.<br>

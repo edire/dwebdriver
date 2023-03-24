@@ -48,7 +48,7 @@ class ChromeDriver(Chrome):
     def driver_command(self, xpath, command, command_value=None):
         if xpath != None:
             element = self.find_element(by='xpath', value=xpath)
-
+            
         if command == 'url':
             self.get(command_value)
         elif command == 'click':
@@ -81,6 +81,11 @@ class ChromeDriver(Chrome):
                 self.switch_to.frame(command_value)
         elif command == 'accept':
             self.switch_to.alert.accept()
+        elif command == 'drop_down':
+            for option in element.find_elements(by='tag name', value=('option')):
+                if option.text == command_value:
+                    option.click()
+                    break
 
     def process_df(self, df_orig, odbc_db=None):
         df = df_orig.copy()
