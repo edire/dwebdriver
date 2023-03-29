@@ -24,6 +24,7 @@ MIT License
 
 ## Updates
 
+03/29/2023 - Updated ChromeDriver to use --headless=new in order to download reports in headless.<br>
 03/24/2023 - Added drop down field selection.<br>
 03/19/2023 - Added scroll margin logic.<br>
 03/17/2023 - Added logic to accept alert.<br>

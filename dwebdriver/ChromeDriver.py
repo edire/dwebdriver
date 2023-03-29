@@ -33,7 +33,7 @@ class ChromeDriver(Chrome):
         self.options.add_argument('--disable-gpu')
         self.options.add_argument("--disable-dev-shm-usage")
         if headless==True:
-            self.options.add_argument('--headless')
+            self.options.add_argument('--headless=new')
         if no_sandbox==True:
             self.options.add_argument('--no-sandbox')
         if allow_popups == True:
