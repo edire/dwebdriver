@@ -2,7 +2,7 @@
 from selenium.webdriver import Chrome, ChromeOptions
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.core.utils import ChromeType
+from webdriver_manager.core.os_manager import ChromeType
 import os
 from . import tools
 
