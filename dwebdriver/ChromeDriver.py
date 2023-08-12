@@ -1,14 +1,12 @@
 
 from selenium.webdriver import Chrome, ChromeOptions
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 from numpy import nan
 import os
 from time import sleep
-from selenium.webdriver.common.action_chains import ActionChains
-import chromedriver_autoinstaller
-
-
-chromedriver_autoinstaller.install()
 
 
 class ChromeDriver(Chrome):
@@ -20,7 +18,7 @@ class ChromeDriver(Chrome):
                  , allow_popups=False
                  , disable_extensions=False
                  , user_profile=None
-                 , user_dir=fr"C:\Users\{os.getenv('USERNAME')}\AppData\Local\Google\Chrome\User Data"
+                 , user_dir=fr"{os.path.expanduser('~')}\AppData\Local\Google\Chrome\User Data"
                  ):
         self.directory = download_directory
         self.options = ChromeOptions()
@@ -43,7 +41,7 @@ class ChromeDriver(Chrome):
         if user_profile != None:
             self.options.add_argument(f"--user-data-dir={user_dir}")
             self.options.add_argument(f"--profile-directory={user_profile}")
-        super().__init__(options=self.options)
+        super().__init__(service=ChromeService(ChromeDriverManager().install()), options=self.options)
 
     def driver_command(self, xpath, command, command_value=None):
         if xpath != None:
