@@ -2,7 +2,7 @@
 from setuptools import setup
 setup(
     name='dwebdriver',
-    version='1.0.0',
+    version='1.0.1',
     author='Eric Di Re',
     description='Custom Selenium Web Driving',
     url='https://github.com/edire/dwebdriver.git',
