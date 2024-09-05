@@ -24,6 +24,7 @@ MIT License
 
 ## Updates
 
+09/04/2024 - Force webdriver-manager>=4.0.2 to account for THIRD_PARTY_NOTICES error.<br>
 08/12/2023 - Moved driver functions to universal tools module. Added use_chromium option.<br>
 08/12/2023 - Updated to use webdriver-manager for new chromedriver binaries.<br>
 03/29/2023 - Updated ChromeDriver to use --headless=new in order to download reports in headless.<br>
