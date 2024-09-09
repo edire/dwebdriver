@@ -47,6 +47,9 @@ def _driver_command(self, xpath, command, command_value=None):
             if option.text == command_value:
                 option.click()
                 break
+    elif command == 'switch_window':
+        self.switch_to.window(self.window_handles[command_value])
+
 
 def _process_df(self, df_orig, odbc_db=None):
     df = df_orig.copy()
