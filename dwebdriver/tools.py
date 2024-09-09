@@ -48,6 +48,7 @@ def _driver_command(self, xpath, command, command_value=None):
                 option.click()
                 break
     elif command == 'switch_window':
+        command_value = int(command_value)
         self.switch_to.window(self.window_handles[command_value])
 
 
