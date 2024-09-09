@@ -2,5 +2,5 @@
 from .ChromeDriver import ChromeDriver
 from .tools import WaitForFile
 
-__version__ = "1.0.3"
+__version__ = "1.1.0"
 __author__ = "Eric Di Re"
